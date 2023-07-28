@@ -1,0 +1,4 @@
+TITLE = "Stocks"
+
+APP_WIDTH = 960
+APP_HEIGHT = 640
