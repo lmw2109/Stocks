@@ -22,7 +22,7 @@ class NavigationFrame(ctk.CTkFrame):
                                            label_text = "   My Stocks",
                                            label_text_color = 'gray',
                                            label_anchor = 'w')
-        scrollable_frame.place(x = 0, rely = 0.07, relwidth =1, relheight = 0.86)
+        scrollable_frame.place(x = 0, rely = 0.07, relwidth = 1, relheight = 0.86)
         
 class SearchFrame(ctk.CTkFrame):
     def __init__(self, parent, **kwargs):
@@ -30,7 +30,7 @@ class SearchFrame(ctk.CTkFrame):
 
         search = ctk.CTkEntry(master = self,
                               placeholder_text = 'Search')
-        search.pack(side = 'left', padx = 8, pady = 12, expand = True, fill = 'both')
+        search.pack(side = 'left', padx = 12, pady = 12, expand = True, fill = 'both')
         
 class ScrollableFrame(ctk.CTkScrollableFrame):
     def __init__(self, parent, **kwargs):
@@ -42,10 +42,10 @@ class ScrollableFrame(ctk.CTkScrollableFrame):
             stock_frame = StockFrame(self,
                                      symbol = stock
                                      )
-            stock_frame.pack(padx = 12, pady = 6, expand = True, fill = 'x')
+            stock_frame.pack(padx = 12, pady = 4, expand = True, fill = 'both')
 
 class StockFrame(ctk.CTkFrame):
     def __init__(self, parent, symbol, **kwargs):
         super().__init__(parent, **kwargs)
         symbol_label = ctk.CTkLabel(self, text = symbol)
-        symbol_label.grid(row = 0, column = 0)
+        symbol_label.pack()

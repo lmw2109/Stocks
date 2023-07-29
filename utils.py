@@ -6,7 +6,6 @@ def write_list(file_name ,list):
         json.dump(list, fp)
         print("Done writing JSON.")
 
-
 def read_list(path):
     with open(path, "rb") as fp:
         list = json.load(fp)
