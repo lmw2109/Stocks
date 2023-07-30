@@ -7,6 +7,12 @@ def write_list(file_name , list):
         print("Done writing JSON.")
 
 def read_list(path:str) -> list:
-    with open(path, "rb") as fp:
-        list = json.load(fp)
+    try:
+        with open(path, "rb") as fp:
+            list = json.load(fp)
+        print('User stocks loaded.')
         return list
+    except:
+        print('User stocks not loaded.')
+        return []
+        

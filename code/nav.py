@@ -9,8 +9,9 @@ Navigation Panel.
 '''
 
 class NavigationFrame(ctk.CTkFrame):
-    def __init__(self, parent, **kwargs):
-        
+    def __init__(self, parent, data, **kwargs):  
+        self.data = data
+            
         super().__init__(parent, **kwargs)
         self.place(x = 0, y = 0 , relwidth = 0.25, relheight = 1)
         
@@ -36,11 +37,8 @@ class SearchFrame(ctk.CTkFrame):
 class ScrollableFrame(ctk.CTkScrollableFrame):
     def __init__(self, parent, **kwargs):
         super().__init__(parent, **kwargs)
-        try:
-            stocks = read_list("./user_stocks.json")
-            print('User stocks read.')
-        except:
-            print('User stocks not found')
+
+        stocks = read_list("./user_stocks.json")
         
         for stock in stocks:
             stock_frame = StockFrame(self,

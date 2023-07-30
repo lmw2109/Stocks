@@ -15,16 +15,20 @@ class App(ctk.CTk):
         self.geometry(f"{APP_WIDTH}x{APP_HEIGHT}")
         self.resizable(False, False)
         self.title(TITLE)
-        # create frames & widgets
-        self.create()
-        
+
         # data
         self.data = DataHandler()
         
-    def create(self):
+        # create frames & widgets
+        self.create(self.data)
+
+        
+    def create(self, data):
         NavigationFrame(parent = self,
+                        data = data,
                         corner_radius = 0)
         InformationFrame(parent = self,
+                         data = data,
                          corner_radius = 0)
         
 # run
