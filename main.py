@@ -3,6 +3,7 @@ import customtkinter as ctk
 from settings import *
 from nav import NavigationFrame
 from info import InformationFrame
+from data import DataHandler
 
 class App(ctk.CTk):
     # setup
@@ -16,6 +17,9 @@ class App(ctk.CTk):
         self.title(TITLE)
         # create frames & widgets
         self.create()
+        
+        # data
+        self.data = DataHandler()
         
     def create(self):
         NavigationFrame(parent = self,
