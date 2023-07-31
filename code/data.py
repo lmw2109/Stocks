@@ -18,7 +18,7 @@ class DataHandler():
         # data
         self.tickers = self._get_tickers()
             
-    def _get_tickers(self) -> Ticker:
+    def _get_tickers(self):
         try:
             stocks_request = " ".join(self.symbols_list)
             tickers = Ticker(stocks_request)

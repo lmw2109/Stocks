@@ -22,7 +22,6 @@ class App(ctk.CTk):
         # create frames & widgets
         self.create(self.data)
 
-        
     def create(self, data):
         NavigationFrame(parent = self,
                         data = data,
